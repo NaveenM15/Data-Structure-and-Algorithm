@@ -1,0 +1,39 @@
+import java.util.Arrays;
+
+public class RemoveOdd_4 {
+
+    public void print(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+
+    public int[] removeOdd(int[] arr) {
+        int even = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0) {
+                even++;
+            }
+        }
+        int newArray[] = new int[even];
+        int j = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0) {
+                newArray[j] = arr[i];
+                j++;
+            }
+        }
+        return newArray;
+    }
+
+    public static void main(String[] args) {
+         RemoveOdd_4 in = new RemoveOdd_4();
+        int a[] = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        System.out.print("Original Array: ");
+        in.print(a);
+        System.out.println("After Remove Odd Elements:");
+        int result[] = in.removeOdd(a);
+        System.out.println(Arrays.toString(result));
+    }
+}
