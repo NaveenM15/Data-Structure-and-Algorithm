@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class Arrays_1 {
+    public void scan(int n){
+        Scanner sc=new Scanner(System.in);
+        int a[]=new int[n];
+        for(int i=0;i<n;i++){
+            a[i]=sc.nextInt();
+        }
+        System.out.print("The Array is: ");
+         print(a,n);
+    }
+    public void  print(int[] s,int n ){
+      for(int i=0;i<n;i++){
+          System.out.print(s[i]+" ");
+      }
+
+    }
+    public static void main(String[] args) {
+        Arrays_1 in=new Arrays_1();
+        Scanner io=new Scanner(System.in);
+        System.out.print("Enter Limit: ");
+        int n=io.nextInt();
+        in.scan(n);
+
+    }
+}
