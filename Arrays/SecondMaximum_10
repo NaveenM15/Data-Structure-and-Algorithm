@@ -1,0 +1,39 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class SecondMaximum_10 {
+        static void maximum(int[] a,int n) {
+            int firstMax=0;
+            int secondMax=0;
+            for (int i = 0; i < n; i++) {
+                if(a[i]>firstMax) {
+                    secondMax=firstMax;
+                    firstMax=a[i];
+                }
+                else if(a[i]>secondMax && a[i]<firstMax && a[i]!=firstMax) {
+                    secondMax=a[i];
+                }
+            }
+            System.out.println("\nFirst Maximum: "+firstMax);
+            System.out.print("Second Maximum: "+secondMax);
+        }
+        public static void main(String[] args) {
+            Scanner in=new Scanner(System.in);
+            System.out.print("Enter Limit: ");
+            int n=in.nextInt();
+            int a[]=new int[n];
+            for(int i=0;i<n;i++){
+                a[i]=in.nextInt();
+            }
+            System.out.print("Original Array: ");
+            for(int e:a){
+                System.out.print(e+" ");
+            }
+            maximum(a,n);
+
+        }
+    }
+
+
+
+
