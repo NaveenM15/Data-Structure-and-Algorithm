@@ -1,0 +1,40 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class OddAfterEven_13 {
+
+        public static int[]  oddAfterEven(int[] a,int n){
+            int f=0;
+            int l=a.length-1;
+            while(f<l){
+                while(a[f]%2==0){
+                    f++;
+                }
+                while(a[l]%2!=0){
+                    l--;
+                }
+                if(f<l){
+                    int temp=a[f];
+                    a[f]=a[l];
+                    a[l]=temp;
+                }
+                f++;
+                l--;
+
+            }
+            return a;
+        }
+        public static void main(String[] args) {
+            Scanner in=new Scanner(System.in);
+            System.out.println("Enter Limit: ");
+            int n=in.nextInt();
+            System.out.print("Enter the Elements in Array : ");
+            int a[]=new int[n];
+            for(int i=0;i<n;i++){
+                a[i]=in.nextInt();
+            }
+            System.out.print("Odd followed by Even Elements: ");
+            System.out.print(Arrays.toString(oddAfterEven(a,n)));
+        }
+    }
+
